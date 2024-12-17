@@ -1,0 +1,14 @@
+<div class="container">
+    <h1 class="text-center">Community Events</h1>
+    <mat-card class="section">
+        <mat-card-content>
+            @for (event of events$ | async; track event.id) {
+            <div class="event-item">
+                <h3>{{ event.title }}</h3>
+                <p>{{ event.description }}</p>
+                <p>{{ event.date | date:'full' }}</p>
+            </div>
+            }
+        </mat-card-content>
+    </mat-card>
+</div>

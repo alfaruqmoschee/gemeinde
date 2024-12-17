@@ -1,0 +1,37 @@
+@use 'SASS:map';
+@use '@angular/material' as mat;
+
+.toolbar {
+  height: 40px;
+  display: flex;
+  align-items: center;
+
+  &-vertical-line {
+    display: inline-block;
+    border-left: 1px solid #ccc;
+    margin-left: 10px;
+    height: 25px;
+  }
+
+  &-user {
+    display: flex;
+    align-items: center;
+    font-size: medium;
+    gap: 5px;
+  }
+
+  &-entry {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    font-size: medium;
+  }
+
+  &-spacer {
+    flex: 1 1 auto;
+  }
+
+  .mat-icon {
+    cursor: pointer;
+  }
+}

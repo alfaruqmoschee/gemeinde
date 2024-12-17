@@ -1,0 +1,28 @@
+<mat-sidenav-container class="sidebar" autosize="true">
+  <mat-sidenav mode="side" #sidenav>
+    <div class="sidebar-menu">
+      <ng-template ngFor let-menuEntry [ngForOf]="sideMenu">
+        <div
+          *ngIf="isRouterMenuItem(menuEntry); else spacerMenuItem"
+          [routerLink]="[menuEntry.route]"
+          (click)="$event.stopPropagation()"
+          class="sidebar-menu-item"
+        >
+          <mat-icon color="primary" [matTooltip]="menuEntry.toolTip">{{ menuEntry.icon }}</mat-icon
+          >&nbsp;
+          <span>{{ menuEntry.name }}</span>
+        </div>
+      </ng-template>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidebar-main-content">
+    <div class="sidebar-main-content-outlet">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<ng-template #spacerMenuItem>
+  <div class="sidebar-spacer"></div>
+</ng-template>

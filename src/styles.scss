@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use './styles/variables' as var;
+@use './app/components/layout/footer/footer.component-theme' as footer;
+@use './app/components/layout/toolbar/toolbar.component-theme' as toolbar;
+@use './styles/m3-theme.scss' as myTheme;
+
+@include mat.core();
+
+@include mat.typography-hierarchy(myTheme.$light-theme, $back-compat: true);
+
+@include footer.theme(myTheme.$light-theme);
+@include toolbar.theme(myTheme.$light-theme);
+
+// Import external styles
+// @import '@ng-select/ng-select/themes/material.theme.css';
+
+html,
+body {
+    height: 100%;
+    background-color: #e2dcdc;
+    margin: 0;
+    overflow: hidden;
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+html {
+    @include mat.all-component-themes(myTheme.$light-theme);
+}
+

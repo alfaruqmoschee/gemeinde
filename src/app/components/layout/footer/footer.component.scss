@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  height: calc(100% - 200px);
+
+  &-spacer {
+    flex: 1 1 auto;
+  }
+
+  &-application {
+    margin-left: 20px;
+  }
+
+  &-copyright {
+    margin-right: 20px;
+  }
+}

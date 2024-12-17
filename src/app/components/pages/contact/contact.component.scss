@@ -1,0 +1,35 @@
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.text-center {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.mat-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+.contact-details {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.contact-item {
+  margin-bottom: 15px;
+}
+
+.phone-link {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.phone-link:hover {
+  text-decoration: underline;
+}

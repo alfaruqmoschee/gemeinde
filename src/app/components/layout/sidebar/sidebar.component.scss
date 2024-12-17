@@ -1,0 +1,51 @@
+@use '@angular/material' as mat;
+
+.sidebar {
+  //height - toolbar - footer
+  height: calc(100% - 40px - 20px);
+  background-color: inherit;
+
+  mat-sidenav {
+    width: auto;
+    @include mat.elevation(4);
+    border-radius: 0;
+  }
+
+  &-menu {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &-item {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+  }
+
+  &-main-content {
+    padding: 10px;
+
+    &-outlet {
+      overflow: hidden;
+      // overflow-y: auto;
+      margin: 15px;
+      // height: calc(100% - 30px - 15px - 35px);
+    }
+  }
+
+  &-spacer {
+    flex: 1 1 auto;
+  }
+
+  .chevron-button {
+    transition: 300ms ease-in-out;
+    transform: rotate(0deg);
+  }
+
+  .chevron-button.rotated {
+    transform: rotate(180deg);
+  }
+}

@@ -1,82 +1,248 @@
-:host {
-  display: flex;
-  justify-content: center;
-  
+
+
+/* General container styling */
+mat-card {
+  max-width: 100%;
+  margin: 10px auto;
+  // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.Background-img{
-  height: 100%;
+mat-card-content {
+  padding: 0;
+}
+
+/* Background image */
+.Background-img {
   width: 100%;
+  height: auto;
   object-fit: cover;
 }
 
-.message-qoute-container{
+/* Overlay container */
+.message-qoute-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   position: absolute;
-  top: 27%;
-  left: 10%;
-  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
+  color: #ffffff;
+  // background-color: rgba(0, 0, 0, 0.5);
+  /* Slight background overlay for text readability */
+  padding: 10px;
+  border-radius: 8px;
+  width: 90%;
+  /* Makes the text container responsive */
+  max-width: 50%;
+  /* Ensures it doesn't grow too large on big screens */
+  box-sizing: border-box;
+}
+
+/* Verse styling */
+.verse {
+  font-size: 3rem;
+  // margin: 10px 0;
+  line-height: 1.5;
+  // direction: rtl;
   color: black;
-  text-shadow: 0px 0px 5px white;
+  /* Ensures proper alignment for Arabic text */
+}
 
-  .verse{
-    font-family: 'Amiri', serif;
-    font-size: 3rem;
-    margin-bottom: 40px;
-    margin-right: 10%;
-    margin-left: 10%;
-    // width: 80%;
+/* Translation styling */
+.translation {
+  font-size: 1.5rem;
+  // margin: 10px 0;
+  line-height: 1.5;
+  color: #1a1919;
+  /* Lighter text for translations */
+}
+
+/* Reference styling */
+.reference {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  font-style: italic;
+  color: #1a1919;
+}
+
+/* Scrollbar customization (if using ng-scrollbar) */
+ng-scrollbar {
+  height: 100%;
+  width: 100%;
+}
+
+/* Responsive behavior */
+@media (max-width: 900px) {
+  .message-qoute-container {
+    width: 95%;
+    padding: 8px;
+    font-size: 0.9rem;
+    /* Adjust font size for smaller screens */
   }
 
-  .translation{
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    margin-right: 10%;
-      margin-left: 10%;
+  .verse {
+    font-size: 1.3rem;
   }
 
-  .reference{
+  .translation {
     font-size: 0.9rem;
   }
+
+  .reference {
+    font-size: 0.8rem;
+  }
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+  .message-qoute-container {
+    width: 95%;
+    padding: 8px;
+    font-size: 0.9rem;
+    /* Adjust font size for smaller screens */
+  }
+
+  .verse {
+    font-size: 1rem;
+  }
+
+  .translation {
+    font-size: 0.9rem;
+  }
+
+  .reference {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .message-qoute-container {
+    width: 90%;
+    padding: 5px;
+    font-size: 0.8rem;
+    /* Smaller font size for very small screens */
+  }
+
+  .verse {
+    font-size: 0.8rem;
+  }
+
+  .translation {
+    font-size: 0.5rem;
+  }
+
+  .reference {
+    font-size: 0.3rem;
+  }
 }
 
 
-.mat-card-actions {
-  display: flex;
-  justify-content: flex-end;
-}
 
-
-// .container {
-//                   padding: 20px;
-//                   max-width: 800px;
-//                   margin: 0 auto;
-//                   border: 2px solid #ccc;
-//                   border-radius: 10px;
-//                   background: #fff;
-//                   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+// :host {
+//   display: flex;
+//   justify-content: center;
 // }
-        
-//                 h1 {
-//                   font-size: 1.8rem;
-//                   margin-bottom: 20px;
-//                 }
-        
-//                 .verse {
-//                   font-family: 'Amiri', serif;
-//                   font-size: 1.5rem;
-//                   margin: 20px 0;
-//                   color: #0077aa;
-//                 }
-        
-//                 .translation {
-//                   font-size: 1.2rem;
-//                   margin: 20px 0;
-//                   color: #444;
-//                 }
-        
-//                 .footer {
-//                   margin-top: 20px;
-//                   font-size: 0.9rem;
-//                   color: #777;
-//                 }
+
+// .Background-img {
+//   height: 100%;
+//   width: 100%;
+//   object-fit: cover;
+// }
+
+// .message-qoute-container {
+//   display: flex;
+//   flex-direction: column;
+//   position: absolute;
+//   top: 27%;
+//   left: 10%;
+//   width: 80%;
+//   text-align: center;
+//   color: black;
+//   text-shadow: 0px 0px 5px white;
+//   box-sizing: border-box;
+
+//   .verse {
+//     display: flex;
+//     font-family: 'Amiri', serif;
+//     font-size: 3rem;
+//     // margin-bottom: 40px;
+//     margin-right: 10%;
+//     margin-left: 10%;
+//     box-sizing: border-box;
+//   }
+
+//   .translation {
+//     display: flex;
+//     font-size: 1.5rem;
+//     // margin-bottom: 10px;
+//     margin-right: 10%;
+//     margin-left: 10%;
+//     box-sizing: border-box;
+//   }
+
+//   .reference {
+//     display: flex;
+//     align-self: center;
+//     font-size: 0.9rem;
+//     box-sizing: border-box;
+//   }
+// }
+
+// @media (max-width: 768px) {
+//   .message-qoute-container {
+//     top: 20%;
+//     left: 5%;
+//     width: 90%;
+//   }
+
+//   .verse {
+//     display: flex;
+//     font-size: 1rem;
+//     margin-right: 5%;
+//     margin-left: 5%;
+//   }
+
+//   .translation {
+//     display: flex;
+//     font-size: 1.2rem;
+//     margin-right: 5%;
+//     margin-left: 5%;
+//   }
+
+//   .reference {
+//     font-size: 0.8rem;
+//   }
+// }
+
+// @media (max-width: 480px) {
+//   .message-qoute-container {
+//     top: 15%;
+//     left: 5%;
+//     width: 90%;
+//   }
+
+//   .verse {
+//     display: flex;
+//     font-size: 0.5rem;
+//     margin-right: 5%;
+//     margin-left: 5%;
+//   }
+
+//   .translation {
+//     display: flex;
+//     font-size: 1rem;
+//     margin-right: 5%;
+//     margin-left: 5%;
+//   }
+
+//   .reference {
+//     display: flex;
+//     font-size: 0.7rem;
+//   }
+// }
